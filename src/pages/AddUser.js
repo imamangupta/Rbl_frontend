@@ -2,14 +2,16 @@ import React from 'react'
 import SideNav from '../components/SideNav'
 import Header from '../components/Header'
 
-export default function AddUser() {
+export default function AddUser(props) {
+
+
   return (
     <>
       <Header />
 
       <div style={{ display: "flex", justifyContent: 'center' }}>
 
-        <SideNav />
+        <SideNav  setHeadProgress={props.setProgress}/>
 
         <div className='main_contant_side'>
 

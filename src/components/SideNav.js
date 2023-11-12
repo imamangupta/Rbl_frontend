@@ -1,59 +1,56 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import LoadingBar from 'react-top-loading-bar'
-import { useState } from 'react';
 
-export default function SideNav() {
+
+export default function SideNav(props) {
 
     
-    const [progress, setProgress] = useState(0);
-
-    const increasePro = () => {
-        setProgress(100);
-        console.log(progress);
+    const moveProgress = () => {
+        props.setHeadProgress(10);
+        props.setHeadProgress(100);
     }
 
     return (
         <>
-           <LoadingBar color='#ffc400' height={2} progress={progress} onLoaderFinished={() => setProgress(0)} />
+          
             <div className='head_side_bar'>
                 <Link style={{ textDecoration: 'none' }} to="/addproduct">
-                    <div className='s_link' onClick={()=>{setProgress(100)}}>
+                    <div className='s_link' onClick={moveProgress}>
                         Add Product
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/modifyproduct">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Modify Product
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/adduser">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Add User
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/modifyuser">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Modify User
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/addbranch">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Add Branch
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/modifybranch">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Modify Branch
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/addproduct">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Upload MIS
                     </div>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/addproduct">
-                    <div className='s_link' onClick={increasePro}>
+                    <div className='s_link' onClick={moveProgress}>
                         Export Data
                     </div>
                 </Link>

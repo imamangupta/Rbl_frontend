@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import AdminHomeContant from '../components/AdminHomeContant'
 import SideNav from '../components/SideNav'
 
-export default function AdminHome() {
+export default function AdminHome(props) {
   return (
     <>
 
@@ -11,7 +11,7 @@ export default function AdminHome() {
 
       <div style={{ display: "flex", justifyContent: 'center' }}>
 
-        <SideNav />
+        <SideNav setHeadProgress={props.setProgress} />
         <AdminHomeContant/>
 
       </div>
